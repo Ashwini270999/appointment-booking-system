@@ -1,0 +1,163 @@
+{
+  "info": {
+    "_postman_id": "e7db7a5b-073c-4ec7-94a2-8bf85b350dbe",
+    "name": "Booking System",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "56111102",
+    "_collection_link": "https://go.postman.co/collection/56111102-e7db7a5b-073c-4ec7-94a2-8bf85b350dbe?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Add Doctor Availability",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"doctor_id\": 1,\r\n    \"date\": \"2026-06-25\",\r\n    \"start_time\": \"09:00\",\r\n    \"end_time\": \"12:00\",\r\n    \"slot_duration\": 30\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/v1/availabilities",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "availabilities"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "View Available Slots",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/v1/doctors/1/slots?date=2026-06-26",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "doctors",
+            "1",
+            "slots"
+          ],
+          "query": [
+            {
+              "key": "date",
+              "value": "2026-06-26"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Book Appointment",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"doctor_id\": 1,\r\n    \"patient_id\": 1,\r\n    \"appointment_date\": \"2026-06-25\",\r\n    \"start_time\": \"09:00\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/v1/appointments",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "appointments"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Reschedule Appointment",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"appointment_date\": \"2026-06-26\",\r\n    \"start_time\": \"10:00\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/v1/appointments/10/reschedule",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "appointments",
+            "10",
+            "reschedule"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Cancel Appointment",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    }
+  ]
+}

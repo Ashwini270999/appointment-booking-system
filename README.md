@@ -537,16 +537,19 @@ For larger traffic volumes:
 
 ---
 
-# Future Enhancements
+# Additional Architecture Implemented
 
-* Laravel Sanctum Authentication
-* API Rate Limiting
-* Redis Caching
-* SMS Notifications
-* Real Email Integration
-* Unit Tests
-* Feature Tests
-* Docker Deployment
+Beyond the core requirements, the following architectural enhancements were implemented:
+
+* Repository Pattern
+* Event Driven Architecture
+* Event & Listener Implementation
+* Queue Based Notification Processing
+* Database Transactions
+* Concurrent Booking Protection using lockForUpdate()
+* Form Request Validation
+* Database Export
+* Postman Collection for API Testing
 
 ---
 

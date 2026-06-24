@@ -166,7 +166,7 @@
           }
         },
         "url": {
-          "raw": "http://127.0.0.1:8000/api/v1/appointments/1/cancel",
+          "raw": "http://127.0.0.1:8000/api/v1/appointments/3/cancel",
           "protocol": "http",
           "host": [
             "127",
@@ -179,7 +179,7 @@
             "api",
             "v1",
             "appointments",
-            "1",
+            "3",
             "cancel"
           ]
         }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 23, 2026 at 06:05 PM
+-- Generation Time: Jun 24, 2026 at 10:37 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -45,7 +45,9 @@ CREATE TABLE `appointments` (
 --
 
 INSERT INTO `appointments` (`id`, `reference_no`, `doctor_id`, `patient_id`, `appointment_date`, `start_time`, `end_time`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'APT-1782230062', 1, 1, '2026-06-30', '10:00:00', '10:30:00', 'cancelled', '2026-06-23 10:24:22', '2026-06-23 10:33:06');
+(1, 'APT-1782230062', 1, 1, '2026-06-30', '10:00:00', '10:30:00', 'cancelled', '2026-06-23 10:24:22', '2026-06-23 10:33:06'),
+(2, 'APT-1782235464', 1, 1, '2026-06-26', '09:00:00', '09:30:00', 'booked', '2026-06-23 11:54:24', '2026-06-23 11:54:24'),
+(3, 'APT-1782289228', 1, 1, '2026-07-01', '10:00:00', '10:30:00', 'cancelled', '2026-06-24 02:50:28', '2026-06-24 03:02:12');
 
 -- --------------------------------------------------------
 
@@ -67,7 +69,8 @@ CREATE TABLE `appointment_cancellations` (
 --
 
 INSERT INTO `appointment_cancellations` (`id`, `appointment_id`, `reason`, `cancelled_at`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Patient requested cancellation', '2026-06-23 10:33:06', '2026-06-23 10:33:06', '2026-06-23 10:33:06');
+(1, 1, 'Patient requested cancellation', '2026-06-23 10:33:06', '2026-06-23 10:33:06', '2026-06-23 10:33:06'),
+(2, 3, 'Personal Emergency', '2026-06-24 03:02:12', '2026-06-24 03:02:12', '2026-06-24 03:02:12');
 
 -- --------------------------------------------------------
 
@@ -141,7 +144,9 @@ CREATE TABLE `doctor_availabilities` (
 --
 
 INSERT INTO `doctor_availabilities` (`id`, `doctor_id`, `date`, `start_time`, `end_time`, `slot_duration`, `created_at`, `updated_at`) VALUES
-(1, 1, '2026-06-30', '09:00:00', '12:00:00', 30, '2026-06-23 10:23:54', '2026-06-23 10:23:54');
+(1, 1, '2026-06-30', '09:00:00', '12:00:00', 30, '2026-06-23 10:23:54', '2026-06-23 10:23:54'),
+(2, 1, '2026-06-26', '09:00:00', '12:00:00', 30, '2026-06-23 11:52:58', '2026-06-23 11:52:58'),
+(3, 1, '2026-07-01', '09:00:00', '12:00:00', 30, '2026-06-24 02:47:18', '2026-06-24 02:47:18');
 
 -- --------------------------------------------------------
 
@@ -243,7 +248,9 @@ CREATE TABLE `notifications` (
 --
 
 INSERT INTO `notifications` (`id`, `appointment_id`, `type`, `message`, `is_sent`, `created_at`, `updated_at`) VALUES
-(1, 1, 'booking', 'Appointment booked successfully', 1, '2026-06-23 10:24:22', '2026-06-23 10:24:25');
+(1, 1, 'booking', 'Appointment booked successfully', 1, '2026-06-23 10:24:22', '2026-06-23 10:24:25'),
+(2, 2, 'booking', 'Appointment booked successfully', 1, '2026-06-23 11:54:24', '2026-06-23 11:54:29'),
+(3, 3, 'booking', 'Appointment booked successfully', 1, '2026-06-24 02:50:28', '2026-06-24 02:50:30');
 
 -- --------------------------------------------------------
 
@@ -465,13 +472,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `appointments`
 --
 ALTER TABLE `appointments`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `appointment_cancellations`
 --
 ALTER TABLE `appointment_cancellations`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `doctors`
@@ -483,7 +490,7 @@ ALTER TABLE `doctors`
 -- AUTO_INCREMENT for table `doctor_availabilities`
 --
 ALTER TABLE `doctor_availabilities`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -495,7 +502,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `jobs`
 --
 ALTER TABLE `jobs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -507,7 +514,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `notifications`
 --
 ALTER TABLE `notifications`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `patients`

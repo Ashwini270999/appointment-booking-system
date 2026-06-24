@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\BookAppointmentRequest;
 use App\Http\Requests\CancelAppointmentRequest;
 use App\Http\Requests\RescheduleAppointmentRequest;
+use App\Models\Appointment;
 use App\Models\DoctorAvailability;
 use App\Models\AppointmentCancellation;
 use Carbon\Carbon;

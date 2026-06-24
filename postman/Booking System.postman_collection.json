@@ -25,7 +25,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n    \"doctor_id\": 1,\r\n    \"date\": \"2026-06-26\",\r\n    \"start_time\": \"09:00\",\r\n    \"end_time\": \"12:00\",\r\n    \"slot_duration\": 30\r\n}",
+          "raw": "{\r\n    \"doctor_id\": 1,\r\n    \"date\": \"2026-07-01\",\r\n    \"start_time\": \"09:00\",\r\n    \"end_time\": \"12:00\",\r\n    \"slot_duration\": 30\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -57,7 +57,7 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://127.0.0.1:8000/api/v1/doctors/1/slots?date=2026-06-26",
+          "raw": "http://127.0.0.1:8000/api/v1/doctors/1/slots?date=2026-07-01",
           "protocol": "http",
           "host": [
             "127",
@@ -76,7 +76,7 @@
           "query": [
             {
               "key": "date",
-              "value": "2026-06-26"
+              "value": "2026-07-01"
             }
           ]
         }
@@ -90,7 +90,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n    \"doctor_id\": 1,\r\n    \"patient_id\": 1,\r\n    \"appointment_date\": \"2026-06-26\",\r\n    \"start_time\": \"09:00\"\r\n}",
+          "raw": "{\r\n    \"doctor_id\": 1,\r\n    \"patient_id\": 1,\r\n    \"appointment_date\": \"2026-07-01\",\r\n    \"start_time\": \"09:00\"\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -123,7 +123,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n    \"appointment_date\": \"2026-06-26\",\r\n    \"start_time\": \"10:00\"\r\n}",
+          "raw": "{\r\n    \"appointment_date\": \"2026-07-01\",\r\n    \"start_time\": \"10:00\"\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -131,7 +131,7 @@
           }
         },
         "url": {
-          "raw": "http://127.0.0.1:8000/api/v1/appointments/10/reschedule",
+          "raw": "http://127.0.0.1:8000/api/v1/appointments/3/reschedule",
           "protocol": "http",
           "host": [
             "127",
@@ -144,7 +144,7 @@
             "api",
             "v1",
             "appointments",
-            "10",
+            "3",
             "reschedule"
           ]
         }
